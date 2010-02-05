@@ -1,7 +1,8 @@
 Last Segment extension + plugin for EE 2.0
 ==========================================
+Often getting the last url segment will be handly - but EE only supports {segment_1}, {segment_2} etc.
 
-The extension will add two global variables: {last_segment} and {last_segment_absolute}
+This extension will add two global variables: {last_segment} and {last_segment_absolute}
 
 The {last_segment} will never be the pagination segment (ie. /P1)
 
