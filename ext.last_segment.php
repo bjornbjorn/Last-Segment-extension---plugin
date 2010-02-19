@@ -15,7 +15,7 @@ class Last_segment_ext {
     
     var $name            = 'Last Segment';
     var $version         = '1.0.0';
-    var $description     = 'Will make a {last_segment} and {last_segment_absolute} tag available everywhere!';
+    var $description     = 'Adds global variables; {last_segment}, {last_segment_absolute}, {last_segment_id}';
     var $settings_exist  = 'n';
     var $docs_url        = 'http://ee.bybjorn.com/last_segment';
 
@@ -117,18 +117,22 @@ class Last_segment_ext {
 		$segment_count = $this->EE->uri->total_segments();		
 		$last_segment_absolute = $this->EE->uri->segment($segment_count); 
 		$last_segment = $last_segment_absolute;
+		$last_segment_id = $segment_count;
 				
 		if(substr($last_segment,0,1) == 'P') // might be a pagination page indicator
 		{
 			$end = substr($last_segment, 1, strlen($last_segment));
 			if ((preg_match( '/^\d*$/', $end) == 1))
 			{
-				$last_segment = $this->EE->uri->segment($segment_count-1); 
+				$last_segment_id = $segment_count-1;
+				$last_segment = $this->EE->uri->segment($last_segment_id);				 
 			} 		
 		}
 
 		$this->EE->config->_global_vars['last_segment'] = $last_segment;
 		$this->EE->config->_global_vars['last_segment_absolute'] = $last_segment;
+		$this->EE->config->_global_vars['last_segment_id'] = $last_segment_id;
+		$this->EE->config->_global_vars['last_segment_absolute_id'] = $segment_count;
 	}
 
 }
