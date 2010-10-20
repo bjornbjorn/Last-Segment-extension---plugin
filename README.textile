@@ -1,13 +1,15 @@
 h3. Last Segment extension + plugin for EE 2.0
 
-Often getting the last url segment will be handly - but EE only supports {segment_1}, {segment_2} etc.
+Adds a {last_segment} variable.
 
 This extension will add the following global variables: 
 
-* {last_segment} - last segment (will never be the pagination segment ie /P1)
-* {last_segment_absolute} - absolute last segment (even pagination)
+* {last_segment} - last segment (will never be the pagination segment ie /P1) - NOTE: if you're on 2.1.1 this will be overriden by EE, use {last_segment_no_pagination} instead
+
+* {last_segment_absolute} - aka. "Last Segment EllisLab Style" - absolute last segment (even pagination)
 * {last_segment_id} - the id of the last segment (for example "3")
 * {last_segment_absolute_id} - the id of the absolute last segment
+* {last_segment_no_pagination} - same as {last_segment} was before
 
 If you don't want to add these global vars you can use the plugin instead:
 

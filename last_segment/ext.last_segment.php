@@ -129,10 +129,11 @@ class Last_segment_ext {
 			} 		
 		}
 
-		$this->EE->config->_global_vars['last_segment'] = $last_segment;
+		$this->EE->config->_global_vars['last_segment'] = $last_segment;    // in case pre. 2.1.1
 		$this->EE->config->_global_vars['last_segment_absolute'] = $last_segment;
 		$this->EE->config->_global_vars['last_segment_id'] = $last_segment_id;
 		$this->EE->config->_global_vars['last_segment_absolute_id'] = $segment_count;
+        $this->EE->config->_global_vars['last_segment_no_pagination'] = $last_segment;
 	}
 
 }
