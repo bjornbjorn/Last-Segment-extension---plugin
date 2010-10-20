@@ -1,4 +1,4 @@
-h3. Last Segment extension + plugin for EE 2.0
+h3. Last Segment extension + plugin for EE 2.1.1
 
 Adds a {last_segment} variable.
 
